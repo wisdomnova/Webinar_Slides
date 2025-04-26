@@ -1,0 +1,62 @@
+{
+    "manifest_version": 3,
+    "name": "Webinar Slides",
+    "short_name": "WR",
+    "description": "Convert Google Doc Paragraphs to Google Slides with the click of a button",
+    "version": "1.0",
+    "icons": {
+        "16": "./images/icon-16.png",
+        "32": "./images/icon-32.png",
+        "48": "./images/icon-48.png",
+        "128": "./images/icon-128.png"
+    },
+    "action": {
+        "default_popup": "./default.html",
+        "default_title": "WR Slides",
+        "default_icon": {
+            "16": "./images/icon-16.png",
+            "32": "./images/icon-32.png",
+            "48": "./images/icon-48.png",
+            "128": "./images/icon-128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "js": ["./script/unrest.js"],
+            "matches": ["<all_urls>"],
+            "exclude_matches": [
+                "https://docs.google.com/document/d/*"
+            ]
+        },
+        {
+            "js": ["./script/content.js"],
+            "css": ["./index.css"],
+            "matches": [
+                "https://docs.google.com/document/d/*"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "oauth2": {
+        "client_id": "845234041458-n4hrbo7acfnsaeutdkk8ngslpuconguj.apps.googleusercontent.com",
+        "scopes": [
+          "https://www.googleapis.com/auth/presentations",
+          "https://www.googleapis.com/auth/drive.readonly",
+          "https://www.googleapis.com/auth/documents.readonly"
+        ]
+    },
+    "host_permissions": [
+        "https://slides.googleapis.com/"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "permissions": [
+        "identity",
+        "identity.email",
+        "activeTab"
+    ],
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyWl6X4lis+8LOYzXDYQwapaUoECpht1sBaJVxth7a6r0SM57wzsHPdfH6Uw5Mc4/Ao+Pvi+/6ZOnnbrVJgPBn90aANQ71pTncCvw2Tm7THSofFbvwTRbnL5brwK7BuPDg6xciaYPv9CV3TboTjxj/kmWIjJZR8dewdBOghOk5BsxvsmthrRIkWb37NKVAL+0lIESgUCkkxtskKWZGQK+66Oh0D0yU5hZAvv50zU24CE1qqHViOP+tPpvLOwWsN/sPW6y+RUO3L085TZT1sieY3QFJXxapAUEMkMl3twYDb9/VK2FXWIcb2worscIMAnguP3u+/KWVEKfYy+OMrbdZwIDAQAB"
+}

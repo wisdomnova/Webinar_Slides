@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        .dev{
+            width: 720pt;
+            height: 396pt;
+            background-color: brown;
+        }
+        .child{
+            width: 720pt;
+            /* height: 120pt; */
+            background-color: purple;
+            /* transform: translate(0pt, 200pt); */
+        }
+        .span{
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="ws-button-wrap">
+        <button class="ws-button-wrap-btn" id="ws-button-wrap-btn">Convert to Slides 
+            <div class="ws-button-roller ws-button-roller-hide"></div>
+        </button>
+    </div>
+    <div class="dev">
+        <div class="child">
+            <span class="span">
+
+                Les 3 Tunnels HIGH TICKET INTEMPORELS
+                pour Transformer ta Personal Brand et tes Ads 
+                en Machine à cash high ticket en 2024
+                
+            </span>
+        </div>
+    </div>
+    <script>
+        !function(){
+            var child = document.querySelector('.child');
+            var span = document.querySelector('.span');
+
+            var slideLines = Math.ceil(span.innerHTML.length / 85);
+            var shapeHeight = 16 * slideLines; 
+            var slideHeight = 396;
+            var translateY = (slideHeight / 2) - (shapeHeight / 2);
+
+            child.style.height = shapeHeight+"PT";
+            child.style.transform = `translate(0pt, ${translateY}pt)`;
+            console.log(span.innerHTML.length / 85);
+            // console.log(shapeHeight / 2);
+            // console.log(slideHeight / 2);
+            // console.log(translateY);
+        }();
+    </script>
+</body>
+</html>

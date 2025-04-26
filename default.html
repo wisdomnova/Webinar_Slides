@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webinar Slides</title>
+    <style>
+        .ws-container{
+            width: 300px;
+            height: 250px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        p{
+            font-size: 20px;
+        }
+        #greeting, #logoutButton, #loginButton{
+            display: none;
+        }
+        #logoutButton,#loginButton{
+            padding: 15px 50px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid;
+            color: #fff;
+            background-color: #4413c0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        #logoutButton:hover,#loginButton:hover{
+            transition: all 0.3s ease-in-out;
+            background-color: #25086f;
+        }
+        .ws-button-roller{
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            border-top: 2px solid #25086f;
+            border-bottom: 2px solid #25086f;
+            background-color: #fff;
+            margin: 10px 0;
+            animation: rotate360 2s linear infinite;
+        }
+        .ws-button-roller-hide{
+            display: none;
+        }
+        .ws-button-roller-show{
+            display: block;
+        }
+        @keyframes rotate360 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .ws-check-div{
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .ws-check-div input{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="ws-container">
+        <h1>Webinar Slides</h1>
+        <p id="greeting">Hi, User!</p>
+        <div id="loader" class="ws-button-roller ws-button-roller-hide"></div>
+        <button id="loginButton">Log In</button>
+        <button id="logoutButton">Log Out</button>
+
+        <div class="ws-check-div">
+            <input type="checkbox" name="Hide Extension" id="ws-checkbox" checked>
+            <span>ON/OFF</span>
+        </div>
+    </div>
+    <script src="./script/default.js" type="text/javascript"></script>
+</body>
+</html>

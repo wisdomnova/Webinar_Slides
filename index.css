@@ -1,0 +1,53 @@
+.ws-button-wrap{
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 40px;
+    z-index: 1000000000000000000000000000;
+}
+.ws-button-wrap-btn{
+    /* width: 400px; */
+    padding: 15px 50px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid;
+    color: #fff;
+    background-color: #4413c0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.ws-button-wrap-btn:hover{
+    transition: all 0.3s ease-in-out;
+    background-color: #25086f;
+}
+.ws-button-roller{
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    margin-left: 20px;
+    animation: rotate360 2s linear infinite;
+}
+.ws-button-roller-hide{
+    display: none;
+}
+.ws-button-roller-show{
+    display: block;
+}
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
